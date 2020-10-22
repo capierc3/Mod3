@@ -1,9 +1,28 @@
+#ifndef BmpProcessor_H
+#define BmpProcessor_H
+
+#include <stdio.h>
+
 struct BMP_Header {
-	//TODO:Finish struct
+    char sig[2];
+    int size;
+    short reserve1;
+    short reserve2;
+    int offset;
 };
 
 struct DIB_Header{
-	//TODO:Finish struct
+	int headerSize;
+	int width;
+	int height;
+	short planes;
+	short bitPerPixel;
+	int compression;
+	int imageSize;
+	int xPerMeter;
+	int yPerMeter;
+	int colors;
+	int colorCount;
 };
 
 /**
@@ -80,3 +99,5 @@ void readPixelsBMP(FILE* file, struct Pixel** pArr, int width, int height);
  * @param  height: Height of the image that this header is for
  */
 void writePixelsBMP(FILE* file, struct Pixel** pArr, int width, int height);
+
+#endif

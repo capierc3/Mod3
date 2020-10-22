@@ -1,5 +1,9 @@
+
+#ifndef PixelProcessor_H
+#define PixelProcessor_H
+
 struct Pixel{
-	//TODO:Finish struct
+	unsigned char r, g, b;
 };
 
 /**
@@ -14,3 +18,5 @@ struct Pixel{
  * @param  bShift: the shift value of color b shift 
  */
 void colorShiftPixels(struct Pixel** pArr, int width, int height, int rShift, int gShift, int bShift);
+
+#endif
