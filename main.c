@@ -9,7 +9,7 @@
 int main() {
 
     //READ
-    FILE* fileIn = fopen("/home/chase/Documents/SER 334/Mod3/ttt.bmp","rb");
+    FILE* fileIn = fopen("/home/chase/Documents/SER 334/Mod3/wb.bmp","rb");
 
     struct BMP_Header* header = (struct BMP_Header*)malloc(sizeof(struct BMP_Header));
     readBMPHeader(fileIn, header);
@@ -23,7 +23,7 @@ int main() {
     }
     readPixelsBMP(fileIn,pixels,dib->width,dib->height);
 
-//    //display
+    //display
 //    printf("sig: %c%c\n",header->sig[0],header->sig[1]);
 //    printf("size: %d\n", header->size);
 //    printf("r1: %d\n",header->reserve1);
@@ -41,7 +41,7 @@ int main() {
 //    printf("y pixels per meter: %d\n",dib->yPerMeter);
 //    printf("colors in color table: %d\n",dib->colors);
 //    printf("important color count: %d\n",dib->colorCount);
-//    //read pixels
+    //read pixels
 //    for (int i = (dib->height-1); i >= 0; i--) {
 //        printf("|");
 //        for (int j = 0; j < dib->width; j++) {
@@ -49,6 +49,9 @@ int main() {
 //        }
 //        printf("\n");
 //    }
+
+    //Shift
+    colorShiftPixels(pixels,dib->width,dib->height,56,45,78);
 
     //WRITE
     FILE* out = fopen("/home/chase/Documents/SER 334/Mod3/out.bmp","wb");

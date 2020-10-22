@@ -1,5 +1,15 @@
+
+#ifndef PPM_Header_H
+#define PPM_Header_H
+
+#include <stdio.h>
+#include <string.h>
+
 struct PPM_Header{
-	//TODO:Finish struct
+	char sig[2];
+	int width;
+	int height;
+	int maxVal;
 };
 
 /**
@@ -47,3 +57,5 @@ void readPixelsPPM(FILE* file, struct Pixel** pArr, int width, int height);
  * @param  height: Height of the image that this header is for
  */
 void writePixelsPPM(FILE* file, struct Pixel** pArr, int width, int height);
+
+#endif

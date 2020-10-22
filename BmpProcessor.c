@@ -1,6 +1,8 @@
 #include "PixelProcessor.h"
 #include "BmpProcessor.h"
 
+#include <string.h>
+
 /**
  * read BMP header of a file. Useful for converting files from PPM to BMP.
  *
